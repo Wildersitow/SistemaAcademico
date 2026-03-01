@@ -52,4 +52,14 @@ public static void actualizarAsignatura() {
         System.out.println("No encontrada.");
     }
 }
+public static void eliminarAsignatura() {
+    System.out.print("Nombre a eliminar: ");
+    String nombre = scanner.nextLine();
+
+    if (asignaturas.remove(nombre)) {
+        System.out.println("Eliminada correctamente.");
+    } else {
+        System.out.println("No encontrada.");
+    }
+}
 }
