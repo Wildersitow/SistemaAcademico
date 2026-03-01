@@ -117,6 +117,36 @@ public class Main {
             System.out.println("Estudiante no encontrado.");
         }
     }
+    
+    public void actualizarEstudiante() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Ingrese el codigo del estudiante a actualizar: ");
+        String codigo = scanner.nextLine();
+        boolean encontrado = false;
+        for (Estudiante e : estudiantes) {
+            if (e.getCodigo().equalsIgnoreCase(codigo)) {
+                System.out.print("Nuevo nombre (" + e.getNombre() + "): ");
+                String nombre = scanner.nextLine();
+                System.out.print("Nuevo apellido (" + e.getApellido() + "): ");
+                String apellido = scanner.nextLine();
+                System.out.print("Nueva edad (" + e.getEdad() + "): ");
+                int edad = scanner.nextInt();
+                System.out.print("Nuevo semestre (" + e.getSemestre() + "): ");
+                int semestre = scanner.nextInt();
+                scanner.nextLine();
+                e.setNombre(nombre);
+                e.setApellido(apellido);
+                e.setEdad(edad);
+                e.setSemestre(semestre);
+                System.out.println("Estudiante actualizado correctamente.");
+                encontrado = true;
+                break;
+            }
+        }
+        if (!encontrado) {
+            System.out.println("Estudiante no encontrado.");
+        }
+    }
 }
 
     
