@@ -72,6 +72,23 @@ public class Main {
         scanner.nextLine();
         return opcion;
     }
+    public void registrarEstudiante() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Ingrese el codigo: ");
+        String codigo = scanner.nextLine();
+        System.out.print("Ingrese el nombre: ");
+        String nombre = scanner.nextLine();
+        System.out.print("Ingrese el apellido: ");
+        String apellido = scanner.nextLine();
+        System.out.print("Ingrese la edad: ");
+        int edad = scanner.nextInt();
+        System.out.print("Ingrese el semestre: ");
+        int semestre = scanner.nextInt();
+        scanner.nextLine();
+        Estudiante e = new Estudiante(codigo, nombre, apellido, edad, semestre);
+        estudiantes.add(e);
+        System.out.println("Estudiante registrado correctamente.");
+    }
 }
 
     
