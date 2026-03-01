@@ -147,6 +147,23 @@ public class Main {
             System.out.println("Estudiante no encontrado.");
         }
     }
+    
+    public void eliminarEstudiante() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Ingrese el código del estudiante a eliminar: ");
+        String codigo = scanner.nextLine();
+        boolean eliminado = false;
+        for (int i = 0; i < estudiantes.size(); i++) {
+            if (estudiantes.get(i).getCodigo().equalsIgnoreCase(codigo)) {
+                System.out.println("Estudiante eliminado: " + estudiantes.remove(i));
+                eliminado = true;
+                break;
+            }
+        }
+        if (!eliminado) {
+            System.out.println("Estudiante no encontrado.");
+        }
+    }
 }
 
     
