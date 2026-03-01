@@ -37,4 +37,19 @@ public static void buscarAsignatura() {
         System.out.println("No existe.");
     }
 }
+public static void actualizarAsignatura() {
+    System.out.print("Nombre actual: ");
+    String actual = scanner.nextLine();
+
+    int index = asignaturas.indexOf(actual);
+
+    if (index != -1) {
+        System.out.print("Nuevo nombre: ");
+        String nuevo = scanner.nextLine();
+        asignaturas.set(index, nuevo);
+        System.out.println("Actualizada correctamente.");
+    } else {
+        System.out.println("No encontrada.");
+    }
+}
 }
