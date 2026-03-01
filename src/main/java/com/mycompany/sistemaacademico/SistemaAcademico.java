@@ -21,4 +21,20 @@ public class SistemaAcademico {
         asignaturas.add(nombre);
         System.out.println("Asignatura registrada correctamente.");
     }
+    public static void listarAsignaturas() {
+    for (String asignatura : asignaturas) {
+        System.out.println(asignatura);
+    }
+}
+
+public static void buscarAsignatura() {
+    System.out.print("Ingrese nombre a buscar: ");
+    String nombre = scanner.nextLine();
+
+    if (asignaturas.contains(nombre)) {
+        System.out.println("Asignatura encontrada.");
+    } else {
+        System.out.println("No existe.");
+    }
+}
 }
