@@ -41,4 +41,13 @@ public String getNombre() {
         this.codigo = codigo;
     }
     
+    @Override
+public String toString() {
+    return "Estudiante{" +
+            "nombre='" + nombre + '\'' +
+            ", edad=" + edad +
+            ", codigo='" + codigo + '\'' +
+            '}';
+}
+    
 }
