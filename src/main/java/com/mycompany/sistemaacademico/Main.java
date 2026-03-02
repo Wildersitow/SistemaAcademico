@@ -190,7 +190,23 @@ public class Main {
     notas.add(new Nota(estudiante, asignatura, valor, periodo));
     System.out.println("Nota registrada correctamente.");
 }
-    
+    static void listarNotas(ArrayList<Nota> notas) {
+    if (notas.isEmpty()) { System.out.println("No hay notas registradas."); return; }
+    for (Nota n : notas) { System.out.println(n); }
+}
+
+static void buscarNota(ArrayList<Nota> notas, Scanner sc) {
+    System.out.print("Código del estudiante: ");
+    String cod = sc.nextLine();
+    boolean encontrado = false;
+    for (Nota n : notas) {
+        if (n.getEstudiante().getCodigo().equals(cod)) {
+            System.out.println(n);
+            encontrado = true;
+        }
+    }
+    if (!encontrado) System.out.println("No se encontraron notas.");
+}
     
 }
 
