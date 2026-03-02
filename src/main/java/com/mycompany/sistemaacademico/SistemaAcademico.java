@@ -1,14 +1,8 @@
 package com.mycompany.sistemaacademico;
 
-<<<<<<< HEAD
-=======
-/**
- *
- * @author HP
- */
 import java.util.ArrayList;
 import java.util.Scanner;
->>>>>>> 5580df0054d8aeade7293167cbb3ad4f7358a12e
+
 public class SistemaAcademico {
 
    static ArrayList<String> asignaturas = new ArrayList<>();
