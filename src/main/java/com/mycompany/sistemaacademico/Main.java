@@ -224,6 +224,16 @@ static void actualizarNota(ArrayList<Nota> notas, Scanner sc) {
     }
     System.out.println("Nota no encontrada.");
 }
+
+static void eliminarNota(ArrayList<Nota> notas, Scanner sc) {
+    System.out.print("Código del estudiante: ");
+    String codEst = sc.nextLine();
+    System.out.print("Código de la asignatura: ");
+    String codAsig = sc.nextLine();
+    notas.removeIf(n -> n.getEstudiante().getCodigo().equals(codEst) &&
+                        n.getAsignatura().getCodigo().equals(codAsig));
+    System.out.println("Nota eliminada si existía.");
+}
     
 }
 
