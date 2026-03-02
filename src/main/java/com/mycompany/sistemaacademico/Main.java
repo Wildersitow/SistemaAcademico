@@ -164,6 +164,34 @@ public class Main {
             System.out.println("Estudiante no encontrado.");
         }
     }
+    
+    static void registrarNota(ArrayList<Nota> notas, ArrayList<Estudiante> estudiantes, ArrayList<Asignatura> asignaturas, Scanner sc) {
+    System.out.print("Código del estudiante: ");
+    String codEst = sc.nextLine();
+    Estudiante estudiante = null;
+    for (Estudiante e : estudiantes) {
+        if (e.getCodigo().equals(codEst)) { estudiante = e; break; }
+    }
+    if (estudiante == null) { System.out.println("Estudiante no encontrado."); return; }
+
+    System.out.print("Código de la asignatura: ");
+    String codAsig = sc.nextLine();
+    Asignatura asignatura = null;
+    for (Asignatura a : asignaturas) {
+        if (a.getCodigo().equals(codAsig)) { asignatura = a; break; }
+    }
+    if (asignatura == null) { System.out.println("Asignatura no encontrada."); return; }
+
+    System.out.print("Valor de la nota: ");
+    double valor = Double.parseDouble(sc.nextLine());
+    System.out.print("Periodo (ej: 2024-1): ");
+    String periodo = sc.nextLine();
+
+    notas.add(new Nota(estudiante, asignatura, valor, periodo));
+    System.out.println("Nota registrada correctamente.");
+}
+    
+    
 }
 
     
