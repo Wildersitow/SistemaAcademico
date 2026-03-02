@@ -207,6 +207,23 @@ static void buscarNota(ArrayList<Nota> notas, Scanner sc) {
     }
     if (!encontrado) System.out.println("No se encontraron notas.");
 }
+
+static void actualizarNota(ArrayList<Nota> notas, Scanner sc) {
+    System.out.print("Código del estudiante: ");
+    String codEst = sc.nextLine();
+    System.out.print("Código de la asignatura: ");
+    String codAsig = sc.nextLine();
+    for (Nota n : notas) {
+        if (n.getEstudiante().getCodigo().equals(codEst) &&
+            n.getAsignatura().getCodigo().equals(codAsig)) {
+            System.out.print("Nuevo valor de la nota: ");
+            n.setValor(Double.parseDouble(sc.nextLine()));
+            System.out.println("Nota actualizada.");
+            return;
+        }
+    }
+    System.out.println("Nota no encontrada.");
+}
     
 }
 
